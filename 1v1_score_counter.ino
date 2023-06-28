@@ -8,6 +8,7 @@
 #define     CLK1    7
 #define     DIO2    8
 #define     CLK2    9
+#define     BUZZER  A2
 
 #define     INTERVAL 300
 
@@ -31,12 +32,13 @@ void setup(){
     pinMode(BTTM2, INPUT);
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN,LOW);
+            pinMode(BUZZER, OUTPUT);
     Serial.begin(9600);
 
     disp1.init();
     disp2.init();
-    disp1.set(BRIGHT_TYPICAL);
-    disp2.set(BRIGHT_TYPICAL);
+    disp1.set(BRIGHTEST);
+    disp2.set(BRIGHTEST);
     disp1.point(HIGH);
     disp2.point(HIGH);
 }
@@ -47,6 +49,9 @@ void loop(){
     if(digitalRead(BTTP1)){
         if(millis() - tp1 >= INTERVAL){
             score1++;
+            tone(BUZZER, 8000);
+            delay(50);
+            noTone(BUZZER);
             tp1 = millis();
         }   
     }
@@ -80,6 +85,9 @@ void loop(){
     if(digitalRead(BTTP2)){
         if(millis() - tp2 >= INTERVAL){
             score2++;
+            tone(BUZZER, 8000);
+            delay(50);
+            noTone(BUZZER);
             tp2 = millis();
         }   
     }
@@ -96,7 +104,7 @@ void loop(){
 
         while(digitalRead(BTTM2)){        
             t1 = millis();
-            if(t1 - t0>= 200) digitalWrite(LED_BUILTIN, HIGH);   
+            if(t1 - t0 >= 200) digitalWrite(LED_BUILTIN, HIGH);   
             
 
             if(t1-t0 >= 1100) {

@@ -14,8 +14,9 @@ For this project, the following components are required:
 * Arduino UNO
 * 2x 7-segment 4-digit displays
 * 4 buttons, with pull down resistor if necessary
+* Passive buzzer
 
-I also used a shield to make all the connections esaier to handle, I will include drill and gerber file necessary to make the shield on your own.
+I also used a shield to make all the connections esaier to handle, I will include drill and gerber file necessary to make the shield on your own. The buzzer is not mandatory but i used it to include an acoustic feedback.
 
 ## Connections
 
@@ -28,5 +29,6 @@ As you can find in the header of the main file i'm using:
 * D8 for the display 1 input/output data transmission
 * D9 for the display 2 clock
 * D10 for the display 1 input/output data transmission
+* A2 for the buzzer
 
 I also used pull-down resistor for a better buttons reading.
