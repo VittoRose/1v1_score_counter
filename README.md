@@ -28,7 +28,7 @@ As you can find in the header of the main file i'm using:
 * D7 for the display 1 clock
 * D8 for the display 1 input/output data transmission
 * D9 for the display 2 clock
-* D10 for the display 1 input/output data transmission
+* D10 for the display 2 input/output data transmission
 * A2 for the buzzer
 
 I also used pull-down resistor for a better buttons reading.
